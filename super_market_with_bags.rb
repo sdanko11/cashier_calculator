@@ -108,6 +108,7 @@ puts "Total Sales: $#{total_sale}"
 puts "Total Cost of Goods Sold: $#{total_cogs}"
 puts "Quanity Sold: #{total_qty_purchased}"
 puts "Net Profit: $#{net_profit}"
+puts "==========================="
 
 sales_for_date_specified =[]
 
@@ -117,7 +118,7 @@ all_sales.each do |sale|
       transactions_for_view_date = { 
         'Sale Date' => sale[:date_sold],
         'Item Sold' => sale[:item],
-        'Quantity Purchased' => sale[:quantity_purchased],
+        'Quantity Sold' => sale[:quantity_purchased],
         'Sale Total' => sale[:total_sales],
       'Cost of Goods Sold' => sale[:cogs]
     }
@@ -190,4 +191,3 @@ CSV.open("sales_transactions.csv", "a+") do |csv|
   csv <<  data.values.unshift(key)
   end
 end
-
