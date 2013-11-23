@@ -11,9 +11,7 @@ def letter_check(word)
 end
 
 def total_calculation(amount_tendered, total_price)
-  amount_due = amount_tendered.to_f - total_price
-  if amount_due >= 0
-      puts '==================='
+  amount_due = amount_tender      puts '==================='
       puts"Change Due: $#{"%.2f"%amount_due}"
   else 
     amount_still_owed = amount_due * -1
@@ -52,11 +50,8 @@ end
       puts Time.now.strftime("%m/%d/%Y")
         puts Time.now.strftime("%I:%M%p") 
   else 
-    number_check(amount_tendered) == nil 
       error_message
 end
-
-
 
 
 
