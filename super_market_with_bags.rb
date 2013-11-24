@@ -66,7 +66,7 @@ end
 end
 
 all_sales = []
-if opening_command.downcase == 's'
+if opening_command.downcase == 's' 
   CSV.foreach('sales_transactions.csv', headers: true) do |row|
     item = row['Item']
     date = row['Date']
@@ -79,7 +79,7 @@ if opening_command.downcase == 's'
   end
 end
 
-if opening_command == 's'
+if opening_command == 's' 
 
   puts 'What date would you like to see a transaction for?'
   view_date =gets.chomp
@@ -123,12 +123,18 @@ all_sales.each do |sale|
       'Cost of Goods Sold' => sale[:cogs]
     }
     end
+
   sales_for_date_specified << transactions_for_view_date
-  end
+  
 end
+
+
 sales_for_date_specified.delete_if {|sale| sale.count == 0}
 
 tp sales_for_date_specified
+
+end
+
 
 while opening_command.downcase == 't'
   puts 'Make a selection'
